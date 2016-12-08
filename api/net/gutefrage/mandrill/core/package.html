@@ -1,0 +1,193 @@
+<!DOCTYPE html >
+<html>
+        <head>
+          <title>core - net.gutefrage.mandrill.core</title>
+          <meta name="description" content="core - net.gutefrage.mandrill.core" />
+          <meta name="keywords" content="core net.gutefrage.mandrill.core" />
+          <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+          
+      <link href="../../../../lib/template.css" media="screen" type="text/css" rel="stylesheet" />
+      <link href="../../../../lib/diagrams.css" media="screen" type="text/css" rel="stylesheet" id="diagrams-css" />
+      <script type="text/javascript" src="../../../../lib/jquery.js" id="jquery-js"></script>
+      <script type="text/javascript" src="../../../../lib/jquery-ui.js"></script>
+      <script type="text/javascript" src="../../../../lib/template.js"></script>
+      <script type="text/javascript" src="../../../../lib/tools.tooltip.js"></script>
+      
+      <script type="text/javascript">
+         if(top === self) {
+            var url = '../../../../index.html';
+            var hash = 'net.gutefrage.mandrill.core.package';
+            var anchor = window.location.hash;
+            var anchor_opt = '';
+            if (anchor.length >= 1)
+              anchor_opt = '@' + anchor.substring(1);
+            window.location.href = url + '#' + hash + anchor_opt;
+         }
+   	  </script>
+    
+        </head>
+        <body class="value">
+      <div id="definition">
+        <img alt="Package" src="../../../../lib/package_big.png" />
+        <p id="owner"><a href="../../../package.html" class="extype" name="net">net</a>.<a href="../../package.html" class="extype" name="net.gutefrage">gutefrage</a>.<a href="../package.html" class="extype" name="net.gutefrage.mandrill">mandrill</a></p>
+        <h1>core</h1><span class="permalink">
+      <a href="../../../../index.html#net.gutefrage.mandrill.core.package" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      </div>
+
+      <h4 id="signature" class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">package</span>
+      </span>
+      <span class="symbol">
+        <span class="name">core</span>
+      </span>
+      </h4>
+      
+          <div id="comment" class="fullcommenttop"></div>
+        
+
+      <div id="mbrsel">
+        <div id="textfilter"><span class="pre"></span><span class="input"><input id="mbrsel-input" type="text" accesskey="/" /></span><span class="post"></span></div>
+        
+        
+        <div id="visbl">
+            <span class="filtertype">Visibility</span>
+            <ol><li class="public in"><span>Public</span></li><li class="all out"><span>All</span></li></ol>
+          </div>
+      </div>
+
+      <div id="template">
+        <div id="allMembers">
+        
+
+        <div id="types" class="types members">
+              <h3>Type Members</h3>
+              <ol><li name="net.gutefrage.mandrill.core.MandrillApiError" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MandrillApiErrorextendsProductwithSerializable"></a>
+      <a id="MandrillApiError:MandrillApiError"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="MandrillApiError.html"><span class="name">MandrillApiError</span></a><span class="params">(<span name="message">message: <span class="extype" name="scala.Predef.String">String</span></span>, <span name="name">name: <a href="MandrillApiErrorName.html" class="extype" name="net.gutefrage.mandrill.core.MandrillApiErrorName">MandrillApiErrorName</a></span>)</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#net.gutefrage.mandrill.core.package@MandrillApiErrorextendsProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li><li name="net.gutefrage.mandrill.core.MandrillApiErrorName" visbl="pub" data-isabs="true" fullComment="yes" group="Ungrouped">
+      <a id="MandrillApiErrorNameextendsAnyRef"></a>
+      <a id="MandrillApiErrorName:MandrillApiErrorName"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">sealed </span>
+        <span class="kind">trait</span>
+      </span>
+      <span class="symbol">
+        <a href="MandrillApiErrorName.html"><span class="name">MandrillApiErrorName</span></a><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.AnyRef" class="extype" target="_top">AnyRef</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#net.gutefrage.mandrill.core.package@MandrillApiErrorNameextendsAnyRef" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Mandrill has a fixed format for API errors, which is represented by this case object structure
+</p><div class="fullcomment"><div class="comment cmt"><h4> Mandrill API Error </h4><p>Mandrill has a fixed format for API errors, which is represented by this case object structure
+</p></div></div>
+    </li><li name="net.gutefrage.mandrill.core.MandrillApiKey" visbl="pub" data-isabs="false" fullComment="yes" group="Ungrouped">
+      <a id="MandrillApiKeyextendsAnyValwithProductwithSerializable"></a>
+      <a id="MandrillApiKey:MandrillApiKey"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="MandrillApiKey.html"><span class="name">MandrillApiKey</span></a><span class="params">(<span name="value">value: <span class="extype" name="scala.Predef.String">String</span></span>)</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.AnyVal" class="extype" target="_top">AnyVal</a> with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#net.gutefrage.mandrill.core.package@MandrillApiKeyextendsAnyValwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      <p class="shortcomment cmt">Represents the API key all requests need to add for authentication and authorization
+</p><div class="fullcomment"><div class="comment cmt"><h4> Mandrill API Key </h4><p>Represents the API key all requests need to add for authentication and authorization
+</p></div></div>
+    </li><li name="net.gutefrage.mandrill.core.MandrillDateTime" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MandrillDateTimeextendsAnyValwithProductwithSerializable"></a>
+      <a id="MandrillDateTime:MandrillDateTime"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier">final </span>
+        <span class="kind">case class</span>
+      </span>
+      <span class="symbol">
+        <a href="MandrillDateTime.html"><span class="name">MandrillDateTime</span></a><span class="params">(<span name="value">value: <span class="extype" name="org.joda.time.DateTime">DateTime</span></span>)</span><span class="result"> extends <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.AnyVal" class="extype" target="_top">AnyVal</a> with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Product" class="extype" target="_top">Product</a> with <a href="http://www.scala-lang.org/api/2.11.8/index.html#scala.Serializable" class="extype" target="_top">Serializable</a></span>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#net.gutefrage.mandrill.core.package@MandrillDateTimeextendsAnyValwithProductwithSerializable" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        
+
+        <div id="values" class="values members">
+              <h3>Value Members</h3>
+              <ol><li name="net.gutefrage.mandrill.core.MandrillApiErrorName" visbl="pub" data-isabs="false" fullComment="no" group="Ungrouped">
+      <a id="MandrillApiErrorName"></a>
+      <a id="MandrillApiErrorName:MandrillApiErrorName"></a>
+      <h4 class="signature">
+      <span class="modifier_kind">
+        <span class="modifier"></span>
+        <span class="kind">object</span>
+      </span>
+      <span class="symbol">
+        <a href="MandrillApiErrorName$.html"><span class="name">MandrillApiErrorName</span></a>
+      </span>
+      </h4><span class="permalink">
+      <a href="../../../../index.html#net.gutefrage.mandrill.core.package@MandrillApiErrorName" title="Permalink" target="_top">
+        <img src="../../../../lib/permalink.png" alt="Permalink" />
+      </a>
+    </span>
+      
+    </li></ol>
+            </div>
+
+        
+
+        
+        </div>
+
+        <div id="inheritedMembers">
+        
+        
+        </div>
+
+        <div id="groupedMembers">
+        <div class="group" name="Ungrouped">
+              <h3>Ungrouped</h3>
+              
+            </div>
+        </div>
+
+      </div>
+
+      <div id="tooltip"></div>
+
+      <div id="footer">  </div>
+
+
+    </body>
+      </html>
