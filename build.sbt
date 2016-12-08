@@ -70,6 +70,7 @@ lazy val docs = project
     micrositeHomepage := "https://gutefrage.github.io/scala-mandrill",
     micrositeGithubOwner := "gutefrage",
     micrositeGithubRepo := "scala-mandrill",
+    micrositeBaseUrl := "/scala-mandrill",
     micrositeDocumentationUrl := "api",
     git.remoteRepo := "git@github.com:gutefrage/scala-mandrill.git",
     autoAPIMappings := true,
