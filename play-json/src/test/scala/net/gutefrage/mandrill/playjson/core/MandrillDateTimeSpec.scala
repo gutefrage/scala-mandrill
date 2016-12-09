@@ -1,7 +1,6 @@
 package net.gutefrage.mandrill.playjson.core
 
 import net.gutefrage.mandrill.core._
-import net.gutefrage.mandrill.playjson.core.MandrillDateTimeWrites._
 import org.scalatest.{MustMatchers, OptionValues, WordSpec}
 import org.scalatest.prop.PropertyChecks
 import play.api.libs.json._

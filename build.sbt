@@ -36,7 +36,7 @@ lazy val core = project
     )
   )
 
-lazy val test = project
+lazy val testkit = project
   .in(file("test-kit"))
   .settings(
     name := "test-kit",
@@ -55,7 +55,7 @@ lazy val playjson = project
       "com.typesafe.play" %% "play-json" % "2.5.10"
     )
   )
-  .dependsOn(core, test % "test->compile")
+  .dependsOn(core, testkit % "test->compile")
 
 lazy val docs = project
   .in(file("docs"))
@@ -72,6 +72,9 @@ lazy val docs = project
     micrositeGithubRepo := "scala-mandrill",
     micrositeBaseUrl := "/scala-mandrill",
     micrositeDocumentationUrl := "api",
+    micrositeTwitter := "gutefrage_net",
+    micrositeHighlightTheme := "atom-one-light",
+    micrositeExtraMdFiles := Map(file("README.md") -> "readme.md"),
     micrositePalette := Map(
                             // primary and secondary color are swapped
                             "brand-primary" -> "#4DB8AF",
@@ -87,8 +90,10 @@ lazy val docs = project
     addMappingsToSiteDir(mappings in (ScalaUnidoc, packageDoc), micrositeDocumentationUrl),
     ghpagesNoJekyll := false,
     fork in tut := true,
-    fork in (ScalaUnidoc, unidoc) := true
+    fork in (ScalaUnidoc, unidoc) := true,
+    includeFilter in makeSite := "*.html" | "*.css" | "*.png" | "*.jpg" | "*.gif" | "*.js" | "*.swf" | "*.yml" | "*.md"
   )
+  .dependsOn(core, playjson, testkit)
 
 lazy val noPublishSettings = Seq(
   publish := (),

@@ -1,10 +1,30 @@
-package net.gutefrage.mandrill.playjson.core
+package net.gutefrage.mandrill.playjson
 
-import net.gutefrage.mandrill.core.{MandrillApiError, MandrillApiErrorName}
+import net.gutefrage.mandrill.core._
+import org.joda.time.format.DateTimeFormat
 import play.api.data.validation.ValidationError
 import play.api.libs.json._
 
-object MandrillApiErrorReads {
+/**
+ * == Mandrill core API Formats ==
+ *
+ */
+package object core {
+
+  // ----------------------------------
+  // -------- Write instances ---------
+  // ----------------------------------
+
+  private val format = DateTimeFormat.forPattern("yyyy-MM-dd HH:mm:ss")
+  implicit val mandrillDateTimeWrite: Writes[MandrillDateTime] =
+    Writes[MandrillDateTime] { dateTime =>
+      JsString(format.print(dateTime.value))
+    }
+
+  // ----------------------------------
+  // -------- Read instances ----------
+  // ----------------------------------
+
   implicit val apiErrorNameReads: Reads[MandrillApiErrorName] = Reads({
     case JsString(label) =>
       MandrillApiErrorName.enum.decode(label) match {

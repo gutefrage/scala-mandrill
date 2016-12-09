@@ -18,4 +18,5 @@ project/plugins/project/
 .ensime_cache/
 .ensime
 
-
+# Generated via microsite
+/docs/src/main/tut/readme.md

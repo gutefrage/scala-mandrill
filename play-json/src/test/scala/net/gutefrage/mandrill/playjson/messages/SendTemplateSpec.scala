@@ -2,7 +2,6 @@ package net.gutefrage.mandrill.playjson.messages
 
 import net.gutefrage.mandrill.messages.SendTemplate.{Message, TemplateContent}
 import net.gutefrage.mandrill.messages.{MergeVar, Recipient, RecipientMergeVars, SendTemplate}
-import net.gutefrage.mandrill.playjson.messages.MessageWrites._
 import net.gutefrage.mandrill.test.messages.arbitrary._
 import org.scalatest.prop.PropertyChecks
 import org.scalatest.{MustMatchers, WordSpec}

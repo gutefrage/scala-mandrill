@@ -1,7 +1,6 @@
 package net.gutefrage.mandrill.playjson.core
 
 import net.gutefrage.mandrill.core._
-import net.gutefrage.mandrill.playjson.core.MandrillApiErrorReads._
 import org.scalacheck.{Arbitrary, Gen}
 import org.scalatest.prop.PropertyChecks
 import org.scalatest.{MustMatchers, OptionValues, WordSpec}

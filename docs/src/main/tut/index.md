@@ -4,6 +4,4 @@ title:  "Home"
 section: "home"
 ---
 
-# Scala Mandrill
-
-TODO
+{% include_relative readme.md %}
