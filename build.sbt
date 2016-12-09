@@ -102,11 +102,13 @@ lazy val noPublishSettings = Seq(
 )
 
 lazy val publishSettings = Seq(
-    homepage := Some(url("hsi ttps://github.com/typelevel/cats")),
-    licenses := Seq("MIT" -> url("http://opensource.org/licenses/MIT")),
-    scmInfo := Some(ScmInfo(url("https://github.com/typelevel/cats"), "scm:git:git@github.com:typelevel/cats.git")),
+    homepage := Some(url("https://github.com/gutefrage/scala-mandrill")),
+    licenses := Seq("Apache-2.0" -> url("https://www.apache.org/licenses/LICENSE-2.0.html")),
+    scmInfo := Some(
+      ScmInfo(url("https://www.apache.org/licenses/LICENSE-2.0.html"),
+              "scm:git:git@github.com:gutefrage/scala-mandrill.git")),
     autoAPIMappings := true,
-    apiURL := Some(url("http://typelevel.org/cats/api/")),
+    apiURL := Some(url("https://gutefrage.github.io/scala-mandrill/api")),
     pomExtra := (
       <developers>
       <developer>
