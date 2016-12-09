@@ -40,6 +40,13 @@ class Mandrill(apiKey: MandrillApiKey) {
    */
   def messages(): Messages = new Messages(apiKey)
 
+  /**
+   * Mandrill Users API instance for creating requests.
+   *
+   * @return a new request generator instance
+   */
+  def users(): Users = new Users(apiKey)
+
 }
 
 object Mandrill {

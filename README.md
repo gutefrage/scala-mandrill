@@ -24,6 +24,9 @@ In addition the API models are incomplete. We'll add more as the library evolves
 
 ## Supported APIs
 
+- [users](https://mandrillapp.com/api/docs/users.JSON.html)
+  - [ping](https://mandrillapp.com/api/docs/users.JSON.html#method=ping)
+  - [ping2](https://mandrillapp.com/api/docs/users.JSON.html#method=ping2)
 - [messages](https://mandrillapp.com/api/docs/messages.JSON.html)
   - [send-template](https://mandrillapp.com/api/docs/messages.JSON.html#method=send-template)
 

@@ -4,6 +4,16 @@ options:
     menu_type: docs
     menu_section: docs
 
+  - title: Users
+    url: docs/users.html
+    menu_type: docs
+    menu_section: docs
+
+    nested_options:
+       - title: Ping
+         url: docs/users/ping.html
+         menu_section: ping
+
   - title: Messages
     url: docs/messages.html
     menu_type: docs
