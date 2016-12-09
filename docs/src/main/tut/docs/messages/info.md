@@ -1,7 +1,7 @@
 ---
 layout: docs
 title:  "Info"
-section: "mandrill-api"
+section: "docs"
 source: "core/src/main/scala/net/gutefrage/mandrill/Messages.scala"
 scaladoc: "#net.gutefrage.mandrill.Messages"
 ---

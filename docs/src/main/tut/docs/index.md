@@ -1,3 +1,10 @@
+---
+layout: docs
+title:  "Getting started"
+section: "docs"
+---
+
+
 # Getting Started
 
 The [Mandrill API documentation](https://mandrillapp.com/api/docs/) structures their endpoints in multiple

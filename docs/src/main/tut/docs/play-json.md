@@ -1,3 +1,11 @@
+---
+layout: docs
+title:  "Play JSON"
+section: "docs"
+---
+
+# Play JSON
+
 The `play-json` sub module provides `Reads` and `Writes` instances for all API models.
 
 ## Dependency

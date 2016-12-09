@@ -1,7 +1,7 @@
 ---
 layout: docs
 title:  "Errors"
-section: "mandrill-api"
+section: "docs"
 ---
 
 # Errors

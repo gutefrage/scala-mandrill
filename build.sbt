@@ -57,6 +57,8 @@ lazy val playjson = project
   )
   .dependsOn(core, testkit % "test->compile")
 
+lazy val docsMappingsAPIDir = settingKey[String]("Name of subdirectory in site target directory for api docs")
+
 lazy val docs = project
   .in(file("docs"))
   .enablePlugins(MicrositesPlugin)
@@ -71,7 +73,7 @@ lazy val docs = project
     micrositeGithubOwner := "gutefrage",
     micrositeGithubRepo := "scala-mandrill",
     micrositeBaseUrl := "/scala-mandrill",
-    micrositeDocumentationUrl := "api",
+    micrositeDocumentationUrl := "docs",
     micrositeTwitter := "gutefrage_net",
     micrositeHighlightTheme := "atom-one-light",
     micrositeExtraMdFiles := Map(file("README.md") -> "readme.md"),
@@ -87,7 +89,8 @@ lazy val docs = project
                             "white-color" -> "#FFFFFF"),
     git.remoteRepo := "git@github.com:gutefrage/scala-mandrill.git",
     autoAPIMappings := true,
-    addMappingsToSiteDir(mappings in (ScalaUnidoc, packageDoc), micrositeDocumentationUrl),
+    docsMappingsAPIDir := "api",
+    addMappingsToSiteDir(mappings in (ScalaUnidoc, packageDoc), docsMappingsAPIDir),
     ghpagesNoJekyll := false,
     fork in tut := true,
     fork in (ScalaUnidoc, unidoc) := true,

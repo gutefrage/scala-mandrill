@@ -1,32 +1,39 @@
 options:
   - title: Getting Started
-    url: api.html
-    menu_type: mandrill-api
-    menu_section: mandrill-api
+    url: docs/index.html
+    menu_type: docs
+    menu_section: docs
 
   - title: Messages
-    url: mandrill-api/messages.html
-    menu_type: mandrill-api
-    menu_section: mandrill-api
+    url: docs/messages.html
+    menu_type: docs
+    menu_section: docs
 
     nested_options:
-         - title: Send Template
-           url: mandrill-api/messages/send-template.html
-           menu_section: send-template
-         - title: Info
-           url: mandrill-api/messages/info.html
-           menu_section: send-template
+       - title: Send Template
+         url: docs/messages/send-template.html
+         menu_section: send-template
+       - title: Info
+         url: docs/messages/info.html
+         menu_section: send-template
 
   - title: Errors
-    url: mandrill-api/errors.html
-    menu_type: mandrill-api
-    menu_section: mandrill-api
+    url: docs/errors.html
+    menu_type: docs
+    menu_section: docs
 
-  ## ######################### ##
-  ##      Play JSON Section    ##
-  ## ######################### ##
+  - title: JSON
+    url: docs/json.html
+    menu_type: docs
+    menu_section: docs
 
-  - title: Getting Started
-    url: play-json.html
-    menu_type: play-json
-    menu_section: play-json
+    nested_options:
+      - title: Play JSON
+        url: docs/play-json.html
+        menu_type: docs
+        menu_section: docs
+
+  - title: Scaladoc
+    url: api/index.html
+    menu_type: docs
+    menu_section: docs
