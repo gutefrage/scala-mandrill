@@ -14,7 +14,9 @@ Send a new transactional message through Mandrill using a template.
 
 ## Usage
 
-```tut:silent
+Sending a template requires a `SendTemplate` instance. 
+
+```tut:book:silent
 import net.gutefrage.mandrill._
 import net.gutefrage.mandrill.core._
 
@@ -24,3 +26,17 @@ val sendTemplateBody = Mandrill(apiKey).
     sendTemplate("my-template-slug").
     to("foo@bar.com")
 ```
+
+The `sendTemplateBody` has the required shape for the Mandrill API. Serialize with your own
+serializer or with one of the supplied by `Scala Mandrill` and send the json to the required
+REST endpoint. Mandrill returns either a [generic error](errors.html) or `SendTemplateResponse`.
+gain you can provide your own serializer or use the ones provided by `Scala Mandrill`.
+
+```tut:book:silent
+import net.gutefrage.mandrill.messages._
+def callSendTemplate(sendTemplate: SendTemplate): Either[MandrillApiError, SendTemplateResponse] = {
+   // httpClient.post("...", Json.toJson(sendTemplate))
+   ???
+}
+```
+
