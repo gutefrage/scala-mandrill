@@ -33,6 +33,11 @@ options:
         menu_type: docs
         menu_section: docs
 
+      - title: Circe
+        url: docs/circe.html
+        menu_type: docs
+        menu_section: docs
+
   - title: Scaladoc
     url: api/index.html
     menu_type: docs

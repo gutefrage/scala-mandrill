@@ -94,7 +94,14 @@ lazy val docs = project
     ghpagesNoJekyll := false,
     fork in tut := true,
     fork in (ScalaUnidoc, unidoc) := true,
-    includeFilter in makeSite := "*.html" | "*.css" | "*.png" | "*.jpg" | "*.gif" | "*.js" | "*.swf" | "*.yml" | "*.md"
+    includeFilter in makeSite := "*.html" | "*.css" | "*.png" | "*.jpg" | "*.gif" | "*.js" | "*.swf" | "*.yml" | "*.md",
+    // library dependencies for examples
+    libraryDependencies ++= Seq(
+      "org.typelevel" %% "cats" % "0.8.1",
+      "io.circe" %% "circe-core" % "0.6.1",
+      "io.circe" %% "circe-generic" % "0.6.1",
+      "io.circe" %% "circe-parser" % "0.6.1"
+    )
   )
   .dependsOn(core, playjson, testkit)
 
