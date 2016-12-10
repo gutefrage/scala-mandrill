@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/gutefrage/scala-mandrill.svg?branch=master)](https://travis-ci.org/gutefrage/scala-mandrill)
+
 # Minimal Scala API for Mandrill
 
 [Mandrill](http://mandrill.com/) is a transactional email API for MailChimp users.
