@@ -133,7 +133,7 @@ lazy val credentialSettings = Seq(
 
 lazy val sharedPublishSettings = Seq(
   releaseCrossBuild := true,
-//  releaseTagName := tagName.value,
+  releaseTagName := s"v${if (releaseUseGlobalVersion.value) (version in ThisBuild).value else version.value}",
   releasePublishArtifactsAction := PgpKeys.publishSigned.value,
   publishMavenStyle := true,
   publishArtifact in Test := false,
@@ -151,7 +151,7 @@ lazy val sharedReleaseProcess = Seq(
   releaseProcess := Seq[ReleaseStep](checkSnapshotDependencies,
                                      inquireVersions,
                                      runClean,
-                                     releaseStepCommand("validate"),
+                                     runTest,
                                      setReleaseVersion,
                                      commitReleaseVersion,
                                      tagRelease,
