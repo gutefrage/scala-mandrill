@@ -26,6 +26,7 @@ lazy val root = project.copy(id = "scala-mandrill").in(file(".")).aggregate(core
 
 lazy val core = project
   .in(file("core"))
+  .settings(publishSettings)
   .settings(
     name := "core",
     libraryDependencies ++= Seq(
@@ -38,6 +39,7 @@ lazy val core = project
 
 lazy val testkit = project
   .in(file("test-kit"))
+  .settings(publishSettings)
   .settings(
     name := "test-kit",
     libraryDependencies ++= Seq(
@@ -49,6 +51,7 @@ lazy val testkit = project
 
 lazy val playjson = project
   .in(file("play-json"))
+  .settings(publishSettings)
   .settings(
     name := "play-json",
     libraryDependencies ++= Seq(
