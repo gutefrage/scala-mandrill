@@ -8,7 +8,7 @@ jdk:
   - oraclejdk8
 
 script:
-  - ./sbt ++$SCALA_VERSION compile test
+  - sbt ++$SCALA_VERSION compile test
 
 cache:
   directories:
