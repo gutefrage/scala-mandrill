@@ -22,7 +22,8 @@ scalacOptions in ThisBuild ++= Seq("-target:jvm-1.8",
                                    "-Ywarn-dead-code",
                                    "-Xfuture")
 
-lazy val root = project.copy(id = "scala-mandrill").in(file(".")).aggregate(core, playjson)
+lazy val root =
+  project.copy(id = "scala-mandrill").in(file(".")).settings(noPublishSettings).aggregate(core, testkit, playjson)
 
 lazy val core = project
   .in(file("core"))
