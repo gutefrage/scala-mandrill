@@ -5,7 +5,7 @@ This library provides a API models and json (de)serializers.
 
 ## Goals
 
-There is already a scala library scamandrill](https://github.com/dzsessona/scamandrill).
+There is already a scala library [scamandrill](https://github.com/dzsessona/scamandrill).
 While this library as a lot more API models implemented it takes a more opinionated approach.
  
 `Scala Mandrill` provides
@@ -46,3 +46,9 @@ val sendTemplateBody = Mandrill(apiKey)
 ```
 
 For more information read [the documentation](https://gutefrage.github.io/scala-mandrill)
+
+# Acknowledgement
+
+- Mandrill for a great API documentation
+- [Scamandrill](https://github.com/dzsessona/scamandrill) as a source of inspiration
+- [Scala Cats](https://github.com/typelevel/cats) for a great documentation and inspiration for a scala library build setup
