@@ -31,7 +31,7 @@ gain you can provide your own serializer or use the ones provided by `Scala Mand
 
 ```tut:book:silent
 import net.gutefrage.mandrill.users._
-def callSendTemplate(ping: Ping): Either[MandrillApiError, PingResponse] = {
+def callSendTemplate(ping: Ping): Either[MandrillApiError, Pong] = {
    // httpClient.post("...", Json.toJson(sendTemplate))
    ???
 }
