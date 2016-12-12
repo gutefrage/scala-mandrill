@@ -98,7 +98,11 @@ lazy val docs = project
     ghpagesNoJekyll := false,
     fork in tut := true,
     fork in (ScalaUnidoc, unidoc) := true,
-    includeFilter in makeSite := "*.html" | "*.css" | "*.png" | "*.jpg" | "*.gif" | "*.js" | "*.swf" | "*.yml" | "*.md"
+    includeFilter in makeSite := "*.html" | "*.css" | "*.png" | "*.jpg" | "*.gif" | "*.js" | "*.swf" | "*.yml" | "*.md",
+    // dependencies for documentation examples
+    libraryDependencies ++= Seq(
+      "com.typesafe.play" %% "play-ws" % "2.5.10"
+    )
   )
   .dependsOn(core, playjson, testkit)
 
