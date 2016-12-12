@@ -22,7 +22,7 @@ REST endpoint. Mandrill returns either a <a href="errors.html">generic error</a>
 gain you can provide your own serializer or use the ones provided by <code class="highlighter-rouge">Scala Mandrill</code>.</p>
 
 <div class="language-scala highlighter-rouge"><pre class="highlight"><code><span class="k">import</span> <span class="nn">net.gutefrage.mandrill.users._</span>
-<span class="k">def</span> <span class="n">callSendTemplate</span><span class="o">(</span><span class="n">ping</span><span class="k">:</span> <span class="kt">Ping</span><span class="o">)</span><span class="k">:</span> <span class="kt">Either</span><span class="o">[</span><span class="kt">MandrillApiError</span>, <span class="kt">PingResponse</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span>
+<span class="k">def</span> <span class="n">callSendTemplate</span><span class="o">(</span><span class="n">ping</span><span class="k">:</span> <span class="kt">Ping</span><span class="o">)</span><span class="k">:</span> <span class="kt">Either</span><span class="o">[</span><span class="kt">MandrillApiError</span>, <span class="kt">Pong</span><span class="o">]</span> <span class="k">=</span> <span class="o">{</span>
    <span class="c1">// httpClient.post("...", Json.toJson(sendTemplate))
 </span>   <span class="o">???</span>
 <span class="o">}</span>
