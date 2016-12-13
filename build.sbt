@@ -95,10 +95,6 @@ lazy val docs = project
     autoAPIMappings := true,
     docsMappingsAPIDir := "api",
     addMappingsToSiteDir(mappings in (ScalaUnidoc, packageDoc), docsMappingsAPIDir),
-    siteMappings ++= {
-      val sourceDir = (resourceDirectory in Compile).value / "microsite" / "static"
-      (sourceDir.*** --- sourceDir) pair relativeTo(sourceDir)
-    },
     ghpagesNoJekyll := false,
     fork in tut := true,
     fork in (ScalaUnidoc, unidoc) := true,
