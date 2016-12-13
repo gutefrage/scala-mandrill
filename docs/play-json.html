@@ -34,7 +34,7 @@ First import all necessary classes and instances.</p>
 <p>This request can be serialized to json with</p>
 
 <div class="language-scala highlighter-rouge"><pre class="highlight"><code><span class="k">val</span> <span class="n">json</span> <span class="k">=</span> <span class="nc">Json</span><span class="o">.</span><span class="n">toJson</span><span class="o">(</span><span class="n">sendTemplateBody</span><span class="o">)</span>
-<span class="c1">// json: play.api.libs.json.JsValue = {"key":"your-api-key","template_name":"my-template-slug","to":[{"email":"foo@bar.com"}],"template_content":[],"message":{"merge_vars":[{"recipient":{"email":"foo@bar.com"},"merge_vars":[]}],"global_merge_vars":[]}}
+<span class="c1">// json: play.api.libs.json.JsValue = {"key":"your-api-key","template_name":"my-template-slug","to":[{"email":"foo@bar.com"}],"template_content":[],"message":{"merge_vars":[],"global_merge_vars":[]}}
 </span>
 <span class="nc">Json</span><span class="o">.</span><span class="n">prettyPrint</span><span class="o">(</span><span class="n">json</span><span class="o">)</span>
 <span class="c1">// res0: String =
@@ -46,12 +46,7 @@ First import all necessary classes and instances.</p>
 //   } ],
 //   "template_content" : [ ],
 //   "message" : {
-//     "merge_vars" : [ {
-//       "recipient" : {
-//         "email" : "foo@bar.com"
-//       },
-//       "merge_vars" : [ ]
-//     } ],
+//     "merge_vars" : [ ],
 //     "global_merge_vars" : [ ]
 //   }
 // }
@@ -155,13 +150,13 @@ necessary error handling, but gives you an idea how to roll your own email servi
 // import scala.concurrent.duration._
 </span>
 <span class="k">val</span> <span class="n">service</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">WsEmailService</span><span class="o">(</span><span class="n">wsClient</span><span class="o">,</span> <span class="n">apiKey</span><span class="o">)</span>
-<span class="c1">// service: WsEmailService = WsEmailService@5e455fc7
+<span class="c1">// service: WsEmailService = WsEmailService@139b15d2
 </span>
 <span class="nc">Await</span><span class="o">.</span><span class="n">result</span><span class="o">(</span><span class="n">service</span><span class="o">.</span><span class="n">status</span><span class="o">(),</span> <span class="mf">5.</span><span class="n">seconds</span><span class="o">)</span>
 <span class="c1">// res6: Either[net.gutefrage.mandrill.core.MandrillApiError,Unit] = Left(MandrillApiError(Invalid API key,Invalid_Key))
 </span>
 <span class="k">val</span> <span class="n">template</span> <span class="k">=</span> <span class="nc">Mandrill</span><span class="o">(</span><span class="n">apiKey</span><span class="o">).</span><span class="n">messages</span><span class="o">.</span><span class="n">sendTemplate</span><span class="o">(</span><span class="s">"my-template"</span><span class="o">).</span><span class="n">to</span><span class="o">(</span><span class="s">"test@example.com"</span><span class="o">)</span>
-<span class="c1">// template: net.gutefrage.mandrill.messages.SendTemplate = SendTemplate(MandrillApiKey(your-api-key),TemplateName(my-template),List(Recipient(Email(test@example.com),None,None)),List(),Message(List(RecipientMergeVars(Recipient(Email(test@example.com),None,None),ArrayBuffer())),List(),None),None)
+<span class="c1">// template: net.gutefrage.mandrill.messages.SendTemplate = SendTemplate(MandrillApiKey(your-api-key),TemplateName(my-template),List(Recipient(Email(test@example.com),None,None)),List(),Message(List(),List(),None),None)
 </span>
 <span class="nc">Await</span><span class="o">.</span><span class="n">result</span><span class="o">(</span><span class="n">service</span><span class="o">.</span><span class="n">send</span><span class="o">(</span><span class="n">template</span><span class="o">),</span> <span class="mf">5.</span><span class="n">seconds</span><span class="o">)</span>
 <span class="c1">// res7: Either[net.gutefrage.mandrill.core.MandrillApiError,Seq[net.gutefrage.mandrill.messages.SendTemplateResponse]] = Left(MandrillApiError(Invalid API key,Invalid_Key))
