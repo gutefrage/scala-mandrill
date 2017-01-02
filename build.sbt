@@ -24,8 +24,13 @@ scalacOptions in ThisBuild ++= Seq(
   "-Xfuture"
 )
 
-lazy val root =
-  project.copy(id = "scala-mandrill").in(file(".")).settings(noPublishSettings).aggregate(core, testkit, playjson)
+lazy val scala_mandrill =
+  project
+    .in(file("."))
+    .settings(moduleName := "root")
+    .settings(publishSettings)
+    .settings(noPublishSettings)
+    .aggregate(core, testkit, playjson)
 
 lazy val core = project
   .in(file("core"))

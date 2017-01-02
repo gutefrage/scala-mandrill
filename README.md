@@ -1,5 +1,5 @@
 [![Build Status](https://travis-ci.org/gutefrage/scala-mandrill.svg?branch=master)](https://travis-ci.org/gutefrage/scala-mandrill)
-[![Latest version](https://index.scala-lang.org/gutefrage/scala-mandrill/core/latest.svg?color=blue)](https://index.scala-lang.org/gutefrage/scala-mandrill)
+[![Latest version](https://index.scala-lang.org/gutefrage/scala-mandrill/mandrill-core/latest.svg?color=blue)](https://index.scala-lang.org/gutefrage/scala-mandrill)
 
 # Minimal Scala API for Mandrill
 
