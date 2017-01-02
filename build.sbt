@@ -1,6 +1,8 @@
 import com.typesafe.sbt.SbtGhPages.GhPagesKeys._
 import sbtunidoc.Plugin.UnidocKeys._
 import ReleaseTransformations._
+import de.heikoseeberger.sbtheader.license.Apache2_0
+import de.heikoseeberger.sbtheader.CommentStyleMapping._
 
 organization in ThisBuild := "net.gutefrage.mandrill"
 scalaVersion in ThisBuild := "2.11.8"
@@ -34,6 +36,8 @@ lazy val scala_mandrill =
 
 lazy val core = project
   .in(file("core"))
+  .enablePlugins(AutomateHeaderPlugin)
+  .settings(commonSettings)
   .settings(publishSettings)
   .settings(
     name := "mandrill-core",
@@ -46,10 +50,12 @@ lazy val core = project
   )
 
 lazy val testkit = project
-  .in(file("mandrill-test-kit"))
+  .in(file("test-kit"))
+  .enablePlugins(AutomateHeaderPlugin)
+  .settings(commonSettings)
   .settings(publishSettings)
   .settings(
-    name := "test-kit",
+    name := "mandrill-test-kit",
     libraryDependencies ++= Seq(
       "org.scalatest" %% "scalatest" % "3.0.0",
       "org.scalacheck" %% "scalacheck" % "1.13.4"
@@ -58,10 +64,12 @@ lazy val testkit = project
   .dependsOn(core)
 
 lazy val playjson = project
-  .in(file("mandrill-play-json"))
+  .in(file("play-json"))
+  .enablePlugins(AutomateHeaderPlugin)
+  .settings(commonSettings)
   .settings(publishSettings)
   .settings(
-    name := "play-json",
+    name := "mandrill-play-json",
     libraryDependencies ++= Seq(
       "com.typesafe.play" %% "play-json" % "2.5.10"
     )
@@ -113,6 +121,11 @@ lazy val docs = project
     )
   )
   .dependsOn(core, playjson, testkit)
+
+lazy val commonSettings = Seq(
+  // License headers
+  headers := createFrom(Apache2_0, "2016-2017", "gutefrage.net GmbH")
+)
 
 lazy val noPublishSettings = Seq(
   publish := (),
