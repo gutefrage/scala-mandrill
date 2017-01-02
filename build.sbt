@@ -7,20 +7,22 @@ scalaVersion in ThisBuild := "2.11.8"
 
 licenses := Seq("Apache-2.0" -> url("https://www.apache.org/licenses/LICENSE-2.0.html"))
 
-scalacOptions in ThisBuild ++= Seq("-target:jvm-1.8",
-                                   "-deprecation",
-                                   "-encoding",
-                                   "UTF-8",
-                                   "-feature",
-                                   "-language:existentials",
-                                   "-language:higherKinds",
-                                   "-language:implicitConversions",
-                                   "-language:experimental.macros",
-                                   "-unchecked",
-                                   "-Xfatal-warnings",
-                                   "-Xlint",
-                                   "-Ywarn-dead-code",
-                                   "-Xfuture")
+scalacOptions in ThisBuild ++= Seq(
+  "-target:jvm-1.8",
+  "-deprecation",
+  "-encoding",
+  "UTF-8",
+  "-feature",
+  "-language:existentials",
+  "-language:higherKinds",
+  "-language:implicitConversions",
+  "-language:experimental.macros",
+  "-unchecked",
+  "-Xfatal-warnings",
+  "-Xlint",
+  "-Ywarn-dead-code",
+  "-Xfuture"
+)
 
 lazy val root =
   project.copy(id = "scala-mandrill").in(file(".")).settings(noPublishSettings).aggregate(core, testkit, playjson)
@@ -29,7 +31,7 @@ lazy val core = project
   .in(file("core"))
   .settings(publishSettings)
   .settings(
-    name := "core",
+    name := "mandrill-core",
     libraryDependencies ++= Seq(
       "joda-time" % "joda-time" % "2.9.6",
       "org.joda" % "joda-convert" % "1.8.1",
@@ -39,7 +41,7 @@ lazy val core = project
   )
 
 lazy val testkit = project
-  .in(file("test-kit"))
+  .in(file("mandrill-test-kit"))
   .settings(publishSettings)
   .settings(
     name := "test-kit",
@@ -51,7 +53,7 @@ lazy val testkit = project
   .dependsOn(core)
 
 lazy val playjson = project
-  .in(file("play-json"))
+  .in(file("mandrill-play-json"))
   .settings(publishSettings)
   .settings(
     name := "play-json",
@@ -82,15 +84,16 @@ lazy val docs = project
     micrositeHighlightTheme := "atom-one-light",
     micrositeExtraMdFiles := Map(file("README.md") -> "readme.md"),
     micrositePalette := Map(
-                            // primary and secondary color are swapped
-                            "brand-primary" -> "#4DB8AF",
-                            "brand-secondary" -> "#49A0CC",
-                            "brand-tertiary" -> "#222749",
-                            "gray-dark" -> "#646767",
-                            "gray" -> "#A8ACAD",
-                            "gray-light" -> "#CACDCD",
-                            "gray-lighter" -> "#EDEEEE",
-                            "white-color" -> "#FFFFFF"),
+      // primary and secondary color are swapped
+      "brand-primary" -> "#4DB8AF",
+      "brand-secondary" -> "#49A0CC",
+      "brand-tertiary" -> "#222749",
+      "gray-dark" -> "#646767",
+      "gray" -> "#A8ACAD",
+      "gray-light" -> "#CACDCD",
+      "gray-lighter" -> "#EDEEEE",
+      "white-color" -> "#FFFFFF"
+    ),
     git.remoteRepo := "git@github.com:gutefrage/scala-mandrill.git",
     autoAPIMappings := true,
     docsMappingsAPIDir := "api",
@@ -156,17 +159,18 @@ lazy val sharedPublishSettings = Seq(
 )
 
 lazy val sharedReleaseProcess = Seq(
-  releaseProcess := Seq[ReleaseStep](checkSnapshotDependencies,
-                                     inquireVersions,
-                                     runClean,
-                                     runTest,
-                                     setReleaseVersion,
-                                     commitReleaseVersion,
-                                     tagRelease,
-                                     publishArtifacts,
-                                     setNextVersion,
-                                     commitNextVersion,
-                                     ReleaseStep(action = Command.process("sonatypeReleaseAll", _),
-                                                 enableCrossBuild = true),
-                                     pushChanges)
+  releaseProcess := Seq[ReleaseStep](
+    checkSnapshotDependencies,
+    inquireVersions,
+    runClean,
+    runTest,
+    setReleaseVersion,
+    commitReleaseVersion,
+    tagRelease,
+    publishArtifacts,
+    setNextVersion,
+    commitNextVersion,
+    pushChanges,
+    releaseStepCommand("sonatypeRelease")
+  )
 )
