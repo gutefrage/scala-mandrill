@@ -39,8 +39,9 @@ Add the necessary dependencies to your `build.sbt`
 
 ```scala
 libraryDependencies ++= Seq(
-  "net.gutefrage.mandrill" %% "mandrill-core" % "0.1.5",
-  "net.gutefrage.mandrill" %% "mandrill-play-json" % "0.1.5"
+  "net.gutefrage.mandrill" %% "mandrill-core" % "0.1.6",
+  "net.gutefrage.mandrill" %% "mandrill-play-json" % "0.1.6",
+  "net.gutefrage.mandrill" %% "mandrill-test-kit" % "0.1.6" % "test"
 )
 ```
 
