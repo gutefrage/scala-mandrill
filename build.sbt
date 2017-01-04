@@ -148,8 +148,15 @@ lazy val publishSettings = Seq(
         <name>Nepomuk Seiler</name>
         <url>https://github.com/muuki88/</url>
       </developer>
+      <developer>
+        <id>lunaryorn</id>
+        <name>Sebastian Wiesner</name>
+        <url>http://www.lunaryorn.com</url>
+      </developer>
     </developers>
-    )
+    ),
+    // Scaladex publishing
+    scaladexKeywords in Scaladex := Seq("mandrill", "email")
   ) ++ credentialSettings ++ sharedPublishSettings ++ sharedReleaseProcess
 
 lazy val credentialSettings = Seq(
@@ -186,6 +193,7 @@ lazy val sharedReleaseProcess = Seq(
     commitReleaseVersion,
     tagRelease,
     publishArtifacts,
+    releaseStepTask(publish in Scaladex),
     setNextVersion,
     commitNextVersion,
     pushChanges,
